@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- TOP BAR -->
+<div style="background: linear-gradient(90deg, #5b5ce6, #3b82f6);"
+class="text-white text-center py-3 text-lg font-semibold">
+    User Login
+</div>
+
+<div class="flex items-center justify-center min-h-[90vh]">
+
+<form action="/user/login" method="POST"
+class="bg-white text-gray-500 max-w-[340px] w-full mx-4 p-6 py-8 text-sm rounded-xl shadow-md">
+
+    <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">
+        Welcome Back
+    </h2>
+
+    <input class="w-full border rounded px-3 py-2 mb-3"
+    type="email" name="email" placeholder="Email" required>
+
+    <input class="w-full border rounded px-3 py-2 mb-4"
+    type="password" name="password" placeholder="Password" required>
+
+    <div class="flex justify-between mb-4 text-sm">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+        <a href="/user/forgot" class="text-blue-600">Forgot Password?</a>
+    </div>
+
+    <button type="submit"
+    style="background: linear-gradient(90deg, #5b5ce6, #3b82f6);"
+    class="w-full py-2.5 rounded text-white font-medium">
+        Log In
+    </button>
+
+    <p class="text-center mt-4">
+        Don't have an account?
+        <a href="/user/register" class="text-blue-600 underline">Signup</a>
+    </p>
+
+</form>
+
+</div>
+</body>
+</html>

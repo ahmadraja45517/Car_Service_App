@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<%- include('partials/navbar') %>
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-5">About Our Services</h1>
+
+    <div class="row">
+
+        <% about.forEach(item => { %>
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0 mb-4 h-100">
+
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><%= item.title %></h4>
+                        <p class="card-text"><%= item.description %></p>
+
+                        <a href="#" class="btn btn-primary">
+                            <%= item.link %>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        <% }) %>
+
+    </div>
+
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

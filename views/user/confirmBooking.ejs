@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Booking</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container mt-5 text-center">
+
+    <h2>Confirm Your Booking</h2>
+
+    <div class="card mt-4 mx-auto" style="width: 400px;">
+        <img src="/uploads/<%= service.image %>" class="card-img-top" style="height:200px; object-fit:cover;">
+
+        <div class="card-body">
+            <h4><%= service.title %></h4>
+            <p>Price: ₹ <%= service.price %></p>
+
+            <form action="/book/<%= service._id %>" method="POST">
+                <button class="btn btn-success">Confirm Booking</button>
+            </form>
+
+            <a href="/" class="btn btn-danger mt-2">Cancel</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

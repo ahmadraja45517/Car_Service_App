@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Car Service</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <div class="bg-dark text-white p-3 text-center">
+        <h4>Add Car Service (Admin)</h4>
+    </div>
+
+    <form action="/admin/service/add" method="POST" enctype="multipart/form-data" class="mt-4">
+
+        <div class="mb-3">
+            <label>Service Title</label>
+            <input type="text" name="title" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Price</label>
+            <input type="number" name="price" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Choose File</label>
+            <input type="file" name="image" class="form-control">
+        </div>
+
+        <button class="btn btn-dark">Add Service</button>
+
+        <a href="/admin/dashboard" class="btn btn-danger">Cancel</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

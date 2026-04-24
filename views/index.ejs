@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Home</title>
+</head>
+<body>
+
+<%- include('partials/navbar') %>
+<%- include('partials/header') %>
+
+<!-- HERO -->
+<div class="hero-container">
+    <img src="https://images.unsplash.com/photo-1610531527017-d0fd4abcb31e" class="hero" alt="Car">
+
+    <h1 class="txt">Qualified Car Repair services</h1>
+
+    <a href="/services" class="btn btn-warning hero-btn">
+        Book Service
+    </a>
+</div>
+
+<!-- ABOUT -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Why Choose Us</h2>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" class="img-fluid" alt="Car Repair">
+        </div>
+        <div class="col-lg-6">
+            <h4 class="text-danger my-3">About Us</h4>
+            <h2><span class="text-danger">CarServ</span> is the Best Place for Car Repair</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+            <ul class="about-list my-3">
+                <li>Professional & Expert</li>
+                <li>Quality Servicing Center</li>
+                <li>Award Winning Workers</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES (ONLY ONE CLEAN SECTION) -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+
+    <div class="row">
+        <% services.forEach(service => { %>
+
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm">
+
+                    <img src="/uploads/<%= service.image %>" 
+                         class="card-img-top" 
+                         style="height:200px; object-fit:cover;">
+
+                    <div class="card-body text-center">
+                        <h5><%= service.title %></h5>
+                        <p>₹ <%= service.price %></p>
+
+                        <a href="/book/<%= service._id %>" class="btn btn-warning">
+                           Book Now
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/banner') %>
+
+<!-- TEAM -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Our Team</h2>
+
+    <div class="row">
+        <% team.forEach(member => { %>
+            <div class="col-md-3">
+                <div class="card shadow mb-4">
+                    <img src="<%= member.image %>" class="card-img-top" alt="">
+                    
+                    <div class="card-body text-center">
+                        <h5><%= member.name %></h5>
+                        <p><%= member.position %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

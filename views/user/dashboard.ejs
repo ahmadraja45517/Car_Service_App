@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h2>Your Bookings</h2>
+
+    <table class="table table-dark mt-4">
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% bookings.forEach(b => { %>
+                <tr>
+                    <td><%= b.service.title %></td>
+                    <td>₹ <%= b.service.price %></td>
+                    <td><%= b.date.toDateString() %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
